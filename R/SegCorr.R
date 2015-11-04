@@ -32,8 +32,8 @@
 ###       Chromosome.Inf:  a matrix containning the estimated background correlation (rho0.hat) per chromsome, the number of segments
 ###                        and the loglikehood.
 
-options(warn=1)
-SegCorr  = function(CHR,EXP,genes,CNV,SNPSMOOTH,Position.EXP,SNP.CHR,SNP,Position.SNP,group){
+#options(warn=1)
+SegCorr  = function(CHR,EXP,genes,S,CNV,SNPSMOOTH,Position.EXP,SNP.CHR,SNP,Position.SNP,group){
   
   
   
@@ -68,7 +68,10 @@ SegCorr  = function(CHR,EXP,genes,CNV,SNPSMOOTH,Position.EXP,SNP.CHR,SNP,Positio
     stop('CNV: Input must be True/False')
   }
   
-  
+  if(missing(S)){
+    S=0.7
+    warning("Using default value for S")
+  }
   
   
   if(CNV == F){

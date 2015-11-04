@@ -9,7 +9,7 @@ For a given chromosome, gene correlation matrix segmentation is performed. Regio
 correlation are identified using an exact test. The expression matrix must not contain NA's and genes with same expression value (i.e. null gene expression).  
 }
 \usage{
-segmentation(CHR, EXP, genes)
+segmentation(CHR, EXP, genes, S)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -21,6 +21,9 @@ Gene expression matrix (raw/corrected for CNV). Columns correspond to patients a
 }
   \item{genes}{
   Gene ID(name) vector.
+}
+\item{S}{
+  Threshold for model selection. Default S=0.7.
 }
 }
 %\details{
@@ -39,9 +42,9 @@ Gene expression matrix (raw/corrected for CNV). Columns correspond to patients a
 \item{likelihood}{log-likelihood}
 \item{K}{number of segments}
 }
-%\references{
-%% ~put references to the literature/web site here ~
-%}
+\references{
+Delatola E. I., Lebarbier E., Mary-Huard T., Radvanyi F., Robin S., Wong J.(2015). SegCorr: a statistical procedure for the detection of genomic regions of correlated expression. Preprint on Arxiv.
+}
 \author{
 E. I. Delatola, E. Lebarbier, T. Mary-Huard, F. Radvanyi, S. Robin, J. Wong. 
 }

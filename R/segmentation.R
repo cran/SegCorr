@@ -17,9 +17,9 @@
 ###         rho0:          background correlation
 ###         likelihood:    the log-likelihood of the model
 ###         K:             number of segments
-options(warn=1)
+#options(warn=1)
 
-segmentation  = function(CHR,EXP,genes){
+segmentation  = function(CHR,EXP,genes,S){
   
   if(missing(CHR)){
     warning('Chromosome name missing') 
@@ -54,7 +54,11 @@ segmentation  = function(CHR,EXP,genes){
     EXP = sqrt(n/(n-1))*scale(EXP, center = T, scale = T)
     G = cor(EXP)
     
-    
+    if(missing(S)){
+      S=0.7
+      warning("segmentation: Using default value for S")
+    }
+      
     #######################################
     ####### Define Kmax ###################
     ########################################
@@ -76,7 +80,7 @@ segmentation  = function(CHR,EXP,genes){
     #############################################################################
     ######################## Model Selection Criterion ##########################
     #############################################################################
-    S = 0.7
+    #S = 0.7
     loglik=(-1/2)*(DP$J.est+n*p*log(2*pi))
     loglik = loglik[1:Kmax]
     Kseq=1:Kmax

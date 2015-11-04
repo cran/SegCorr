@@ -23,7 +23,7 @@ Indicator denoting the different variance groups among the patients. By default,
 Smoothed genomic signal matrix. Rows correspond to probes and columns to patients.
 }
 \references{
-Picard, F., Lebarbier, E., Hoebeke, M., Rigaill, G., Thiam, B., & Robin, S. (2011). Joint segmentation, calling, and normalization of multiple CGH profiles. Biostatistics.
+Picard, F., Lebarbier, E., Hoebeke, M., Rigaill, G., Thiam, B., Robin, S. (2011). Joint segmentation, calling, and normalization of multiple CGH profiles. Biostatistics.
 }
 \author{
 E. I. Delatola, E. Lebarbier, T. Mary-Huard, F. Radvanyi, S. Robin, J. Wong. 

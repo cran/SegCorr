@@ -1,2 +1,5 @@
-exportPattern(".")
-import(cghseg)
+ importFrom("methods", "new")
+     importFrom("stats", "approx", "cor", "lm", "median", "p.adjust",
+     "pchisq", "residuals", "summary.lm")
+     importFrom('cghseg','multiseg','getsegprofiles')
+     export('segmentation','CNV_correction','segmented_signal','SegCorr')

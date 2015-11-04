@@ -37,9 +37,9 @@ Overlapping genes may correspond to the same SNP/CGH probes.
 \value{
  CNV corrected signal matrix. 
 }
-%\references{
-%% ~put references to the literature/web site here ~
-%}
+\references{
+Delatola E. I., Lebarbier E., Mary-Huard T., Radvanyi F., Robin S., Wong J.(2015). SegCorr: a statistical procedure for the detection of genomic regions of correlated expression. Preprint on Arxiv.
+}
 \author{
 E. I. Delatola, E. Lebarbier, T. Mary-Huard, F. Radvanyi, S. Robin, J. Wong. 
 }
