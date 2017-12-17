@@ -14,8 +14,8 @@ Gene expression profiles have been generated for 30 patients and 500 genes. Back
 Lai, W. R., Johnson, M. D., Kucherlapati, R., & Park, P. J. (2005). Comparative analysis of algorithms for identifying amplifications and deletions in array CGH data. Bioinformatics, 21(19), 3763-3770.
 }
 \examples{
-data(EXP_raw)
-G = cor(t(EXP_raw))## calculating the gene x gene correlation matrix
-image(G)## plotting the correlation matrix
+#data(EXP_raw)
+#G = cor(t(EXP_raw))## calculating the gene x gene correlation matrix
+#image(G)## plotting the correlation matrix
 }
 \keyword{datasets}

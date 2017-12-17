@@ -2,20 +2,20 @@
 \alias{segmented_signal}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Mean Segmentation 
+Mean Segmentation
 }
 \description{
-Multiple profile mean segmentation on the genomic signal is performed using the multiseg function of the cghseg package. Heterogeneous genomic profiles can only be analysed if allocated to homogeneous groups.}
+Mean segmentation on the genomic signal is performed using the Fpsn function of the jointseg package. }
 \usage{
-segmented_signal(SNP.Chr, group)
+segmented_signal(SNP.Chr, Kmax)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{SNP.Chr}{
-SNP/CGH profile matrix for a given chromosome not containing NA's. Columns correspond to patients and rows to probes.
+SNP/CGH profile matrix for a given chromosome (NA's not allowed). Columns correspond to patients and rows to probes.
 }
-  \item{group}{
-Indicator denoting the different variance groups among the patients. By default, all genomic profiles allocated to one group.
+  \item{Kmax}{
+Maximum number of segments.
 }
 }
 
@@ -23,22 +23,21 @@ Indicator denoting the different variance groups among the patients. By default,
 Smoothed genomic signal matrix. Rows correspond to probes and columns to patients.
 }
 \references{
-Picard, F., Lebarbier, E., Hoebeke, M., Rigaill, G., Thiam, B., Robin, S. (2011). Joint segmentation, calling, and normalization of multiple CGH profiles. Biostatistics.
+Morgane Pierre-Jean, Guillem Rigaill and Pierre Neuvial. Performance evaluation of DNA copy number segmentation methods. Briefings in Bioinformatics (2015) 16 (4): 600-615.
 }
 \author{
-E. I. Delatola, E. Lebarbier, T. Mary-Huard, F. Radvanyi, S. Robin, J. Wong. 
+E. I. Delatola, E. Lebarbier, T. Mary-Huard, F. Radvanyi, S. Robin, J. Wong.
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-\code{\link{CNV_correction}}, \code{\link[cghseg]{multiseg}}, \code{\link[cghseg]{getsegprofiles}}
+\code{\link{CNV_correction}}, \code{\link[jointseg]{Fpsn}}
 }
 \examples{
 #data(SNP)
-#mu.SNP = segmented_signal(SNP ,rep(1,dim(SNP)[2]))
+#mu.SNP = segmented_signal(SNP ,100)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 \keyword{models}
-\keyword{multivariate}% __ONLY ONE__ keyword per line

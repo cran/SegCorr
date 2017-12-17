@@ -9,8 +9,7 @@ Gene expression is corrected for CNV events  must not contain NA's and genes wit
 correlation are identified using an exact test.
 }
 \usage{
-SegCorr(CHR, EXP, genes,S, CNV, SNPSMOOTH, Position.EXP, 
-SNP.CHR, SNP, Position.SNP, group)
+SegCorr(CHR, EXP, genes,S, CNV, SNPSMOOTH, Position.EXP, SNP.CHR, SNP, Position.SNP, Kmax)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -25,7 +24,7 @@ Gene ID(name) vector.
 \item{S}{
   Threshold for model selection. Default S=0.7.
 }
-  
+
   \item{CNV}{
  Logical variable indicating whether to perform CNV correction. When CNV=T, the correction is performed. Default value CNV=F.
 }
@@ -38,23 +37,23 @@ Gene ID(name) vector.
 First column is the start position and the second is the end position.
 }
 
-  \item{SNP.CHR}{(Optional Argument when CNV=T)
+\item{SNP.CHR}{(Optional Argument when CNV=T)
  Chromosome allocation vector for genomic probes.
 }
-  \item{SNP}{(Optional Argument when CNV=T)
+\item{SNP}{(Optional Argument when CNV=T)
 SNP profile matrix not containing NA's. Columns correspond to patients and rows to probes.
 }
-  \item{Position.SNP}{(Optional Argument when CNV=T)
+\item{Position.SNP}{(Optional Argument when CNV=T)
 vector with SNP positions
 }
-  \item{group}{(Optional Argument when CNV=T and SNPSMOOTH=T)
-Indicator denoting the different variance groups among the different patients. By default, all genomic profiles allocated to one group.
+\item{Kmax}{(Optional Argument when CNV=T and SNPSMOOTH=T)
+Maximum number of segments. (mean profile segmentation)
 }
 
 }
 
 \value{
-\item{Results}{Matrix containing information about the genomic regions. Each region corresponds to a row of the matrix, the one  with the smallest p-value is on the top of the list.} 
+\item{Results}{Matrix containing information about the genomic regions. Each region corresponds to a row of the matrix, the one  with the smallest p-value is on the top of the list.}
 \item{Results$CHR}{Chromosome}
 \item{Results$Start/End}{the region boundaries  with repsect to the physical location of the gene in the chromosome}
 \item{Results$Rho}{\eqn{\rho} correlation}
@@ -67,14 +66,14 @@ Indicator denoting the different variance groups among the different patients. B
 \item{EXP.corrected}{If the CNV option is chosen, the corrected signal is given.}
 }
 \details{
-Overlapping genes may correspond to the same genomic probes. 
+Overlapping genes may correspond to the same genomic probes.
 %In the human genome, it is very often the case that different genes have either the same start/end position or one gene is located within one other gene. To tackle this problem, we use an adhoc solution. For a given gene, we check the number of SNP probes belonging to that gene and calculate the mean SNP value. In our case, this means that we could have the same SNP probes corresponding to different genes. Therefore, we would like the user to bear this in mind and conduuct inference with the necessary caution.
 }
 \references{
-Delatola E. I., Lebarbier E., Mary-Huard T., Radvanyi F., Robin S., Wong J.(2015). SegCorr: a statistical procedure for the detection of genomic regions of correlated expression. Preprint on Arxiv.
+Delatola E. I., Lebarbier E., Mary-Huard T., Radvanyi F., Robin S., Wong J.(2017). SegCorr: a statistical procedure for the detection of genomic regions of correlated expression. BMC Bioinformatics, 18:333.
 }
 \author{
-E. I. Delatola, E. Lebarbier, T. Mary-Huard, F. Radvanyi, S. Robin, J. Wong. 
+E. I. Delatola, E. Lebarbier, T. Mary-Huard, F. Radvanyi, S. Robin, J. Wong.
 }
 
 
@@ -84,14 +83,14 @@ E. I. Delatola, E. Lebarbier, T. Mary-Huard, F. Radvanyi, S. Robin, J. Wong.
 \code{\link{CNV_correction}},\code{\link{segmentation}}
 }
 \examples{
-data('EXP_raw')
-CHR = rep(1,dim(EXP_raw)[1])
+#data('EXP_raw')
+#CHR = rep(1,dim(EXP_raw)[1])
 
-results = SegCorr(CHR = CHR, EXP = EXP_raw, CNV = FALSE,S=0.7)
+#results = SegCorr(CHR = CHR, EXP = EXP_raw, CNV = FALSE,S=0.7)
 
 ################drawing the heatmap for one region ###########################
-tau = results$Region.List[1,2]: results$Region.List[1,3] 
-heatmap(as.matrix(EXP_raw[tau,]))
+#tau = results$Region.List[1,2]: results$Region.List[1,3]
+#heatmap(as.matrix(EXP_raw[tau,]))
 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

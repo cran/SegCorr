@@ -2,11 +2,11 @@
 \alias{segmentation}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-Correlation Matrix Segmentation 
+Correlation Matrix Segmentation
 }
 \description{
 For a given chromosome, gene correlation matrix segmentation is performed. Regions with high
-correlation are identified using an exact test. The expression matrix must not contain NA's and genes with same expression value (i.e. null gene expression).  
+correlation are identified using an exact test. The expression matrix must not contain NA's and genes with same expression value (i.e. null gene expression).
 }
 \usage{
 segmentation(CHR, EXP, genes, S)
@@ -30,7 +30,7 @@ Gene expression matrix (raw/corrected for CNV). Columns correspond to patients a
 %%  ~~ If necessary, more details than the description above ~~
 %}
 \value{
-\item{Results}{Matrix containing information about the genomic regions. Each region corresponds to a row of the matrix, the one  with the smallest p-value is on the top of the list.} 
+\item{Results}{Matrix containing information about the genomic regions. Each region corresponds to a row of the matrix, the one  with the smallest p-value is on the top of the list.}
 \item{Results$CHR}{Chromosome}
 \item{Results$Start/End}{region boundaries  with respect to the physical location of the gene in the chromosome}
 \item{Results$Rho}{\eqn{\rho} correlation}
@@ -43,10 +43,10 @@ Gene expression matrix (raw/corrected for CNV). Columns correspond to patients a
 \item{K}{number of segments}
 }
 \references{
-Delatola E. I., Lebarbier E., Mary-Huard T., Radvanyi F., Robin S., Wong J.(2015). SegCorr: a statistical procedure for the detection of genomic regions of correlated expression. Preprint on Arxiv.
+Delatola E. I., Lebarbier E., Mary-Huard T., Radvanyi F., Robin S., Wong J.(2017). SegCorr: a statistical procedure for the detection of genomic regions of correlated expression. BMC Bioinformatics, 18:333.
 }
 \author{
-E. I. Delatola, E. Lebarbier, T. Mary-Huard, F. Radvanyi, S. Robin, J. Wong. 
+E. I. Delatola, E. Lebarbier, T. Mary-Huard, F. Radvanyi, S. Robin, J. Wong.
 }
 %\note{
 %%  ~~further notes~~

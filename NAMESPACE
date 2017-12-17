@@ -1,5 +1,5 @@
  importFrom("methods", "new")
      importFrom("stats", "approx", "cor", "lm", "median", "p.adjust",
-     "pchisq", "residuals", "summary.lm")
-     importFrom('cghseg','multiseg','getsegprofiles')
+     "pchisq", "residuals", "summary.lm",'mad')
+     importFrom('jointseg','Fpsn')
      export('segmentation','CNV_correction','segmented_signal','SegCorr')
